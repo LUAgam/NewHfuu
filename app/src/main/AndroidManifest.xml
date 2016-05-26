@@ -7,7 +7,14 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="MANAGE_DOCUMENTS" />
-
+    <!--SMS SDK use-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -132,6 +139,12 @@
             android:name=".Doctor.RegisterSuccActivity"
             android:label="@string/title_activity_register_succ"
             android:theme="@style/AppTheme_Account"></activity>
+        <!-- SMS SDK use -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
     </application>
 
 </manifest>
