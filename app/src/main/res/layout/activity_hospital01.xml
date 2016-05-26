@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.com.newhfuu.Hospital.Hospital01">
+
+    <RelativeLayout
+        android:id="@+id/rl_jixilu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/tv_jixilumenzhen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="绩溪路门诊"
+            />
+        <TextView
+            android:id="@+id/tv_jixilumenzhen_dizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_jixilumenzhen"
+            android:text="合肥市蜀山区绩溪路218号"
+            />
+        <TextView
+            android:id="@+id/tv_jixilumenzhen_dianhua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_jixilumenzhen_dizhi"
+            android:text="0551-62922114"
+            />
+
+    </RelativeLayout>
+
+<ImageView
+    android:id="@+id/iv_yiyuan01"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/rl_jixilu"
+    android:src="@drawable/zhixian02"
+    />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/iv_yiyuan01"
+        >
+        <TextView
+            android:id="@+id/tv_changjianglumenzhen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="长江门诊"
+            />
+        <TextView
+            android:id="@+id/tv_changjianglumenzhen_dizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_changjianglumenzhen"
+            android:text="合肥市蜀山区绩溪路218号"
+            />
+        <TextView
+            android:id="@+id/tv_changjianglumenzhen_dianhua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_changjianglumenzhen_dizhi"
+            android:text="0551-62922114"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

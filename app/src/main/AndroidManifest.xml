@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.com.newhfuu">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="MANAGE_DOCUMENTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="病历助手APP"
+            android:theme="@style/AppTheme_Account">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".registration.RegistrationActivity"
+            android:label="@string/firstPage"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".registration.Consult_doctorActivity"
+            android:label="@string/consult_other"
+            android:theme="@style/AppTheme_Account" />
+        <activity android:name=".registration.Sickness_advanceActivity" />
+        <activity android:name=".registration.Subsequent_visitActivity" />
+        <activity android:name=".registration.GynecologicalActivity" />
+        <activity
+            android:name=".Consult.ConsultFragment"
+            android:label="@string/consult_other"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".MFZXActivity"
+            android:label="@string/consult_other"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Consult.KeshiActivity"
+            android:label="@string/hospital"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Hospital.Hospital01"
+            android:label="@string/hospital_menzhen"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Hospital.Hospital_01mainpage"
+            android:label="@string/hospital"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Hospital.YiyuankeshiActivity"
+            android:label="@string/hospital"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Login.LoginActivity"
+            android:label="@string/login"
+            android:theme="@style/AppTheme_Account"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".personal_center.AboutActivity"
+            android:label="@string/app_name_about"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".personal_center.AccountActivity"
+            android:label="@string/app_name_account"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".personal_center.RecorderHistoryActivity"
+            android:label="@string/app_name_recorderHistory"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".personal_center.RecorderNowActivity"
+            android:label="@string/app_name_recorderNow"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".personal_center.ManageActivity"
+            android:label="@string/app_name_manage"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Login.ForgetPwdActivity"
+            android:label="@string/forget_pwd"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Login.RegisteredActivity"
+            android:label="@string/registered"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Consult.ConsultActivity"
+            android:label="@string/consult"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Consult.Consult_consult"
+            android:theme="@style/AppTheme_Account"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".personal_center.RecorderMesActivity"
+            android:label="@string/title_activity_recorder_mes"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".personal_center.RecorderMesMesActivity"
+            android:label="@string/title_activity_recorder_mes_mes"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".personal_center.RecoderNoteActivity"
+            android:label="@string/title_activity_recoder_note"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".personal_center.AttentionActivity"
+            android:label="@string/title_activity_attention"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Keshi.Fuke"
+            android:label="@string/title_Fuke"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Doctor.DoctorActivity"
+            android:label=""
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Doctor.SureinfoActivity"
+            android:label="@string/title_SureinfoActivity"
+            android:theme="@style/AppTheme_Account" />
+        <activity
+            android:name=".Doctor.RegisterSuccActivity"
+            android:label="@string/title_activity_register_succ"
+            android:theme="@style/AppTheme_Account"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,218 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+     <ScrollView
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:fillViewport="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/green"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:background="@color/green"
+           >
+
+            <com.example.com.newhfuu.personal_center.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/person"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/User_Image"/>
+        </LinearLayout><!-- 水平居中  放置个人头像 点击进入新的页面 进行修改信息 退出账号 此处不是就诊人的信息 而是登录账户的信息-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:id="@+id/Account">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/myData"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView2"
+                    android:src="@android:drawable/ic_menu_edit"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的资料"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:id="@+id/cardMan">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView3"
+                    android:background="@android:drawable/ic_menu_agenda"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="就诊卡管理"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+                    android:gravity="right"
+
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:id="@+id/C_Recorder">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/setting2"
+                android:layout_margin="5dp"
+               />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="查看挂号记录"
+                android:layout_weight="2"
+                android:layout_margin="5dp"
+                android:gravity="center"
+
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/next_36dp"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:id="@+id/N_Recorder">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/setting2"
+                android:layout_margin="5dp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="当前挂号记录"
+                android:layout_weight="2"
+                android:layout_margin="5dp"
+                android:gravity="center"
+
+                />   &lt;!&ndash; 取消预约挂号 放在此处点开的新页面之中&ndash;&gt;
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/next_36dp"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:id="@+id/J_Manage">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/setting2"
+                android:layout_margin="5dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="就诊卡管理"
+                android:layout_weight="2"
+                android:layout_margin="5dp"
+                android:gravity="center"
+
+               />   &lt;!&ndash; 取消预约挂号 放在此处点开的新页面之中&ndash;&gt;
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/next_36dp"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:id="@+id/About">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="关于"
+                android:layout_weight="2"
+                android:layout_margin="5dp"
+                android:gravity="center"
+
+
+                />   &lt;!&ndash; 取消预约挂号 放在此处点开的新页面之中&ndash;&gt;
+
+        </LinearLayout>-->
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView_function"
+        android:background="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="50sp"
+        />
+
+
+</LinearLayout>

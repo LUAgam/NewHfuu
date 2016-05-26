@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="全城"
+        android:id="@+id/allcity"></item>
+    <item android:title="瑶海区"
+        android:id="@+id/yaohai"></item>
+    <item android:title="庐阳区"
+        android:id="@+id/luyang"></item>
+    <item android:title="蜀山区"
+        android:id="@+id/shushan"></item>
+    <item android:title="包河区"
+        android:id="@+id/baohe"></item>
+    <item android:title="长丰县"
+        android:id="@+id/changfeng"></item>
+    <item android:title="肥西县"
+        android:id="@+id/feixi"></item>
+</menu>

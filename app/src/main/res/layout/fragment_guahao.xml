@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/department_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:id="@+id/hospital_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:divider="@null"
+        android:layout_height="wrap_content"
+        >
+
+    </ListView>
+
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="肾脏内科"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/guahao1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016/05/24  星期二（0/15)"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            />
+    <Button
+        android:id="@+id/btn_yuyue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="预约"
+        android:background="#FFFFFF"
+        android:layout_toRightOf="@id/guahao1"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/guahao2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016/05/24  星期二（0/15)"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            />
+        <Button
+            android:id="@+id/btn_yuyue2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预约"
+            android:background="#FFFFFF"
+            android:layout_toRightOf="@id/guahao2"
+            />
+    </RelativeLayout>-->
+
+
+</LinearLayout>

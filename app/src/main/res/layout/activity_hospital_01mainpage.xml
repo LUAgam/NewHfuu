@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.com.newhfuu.Hospital.Hospital_01mainpage"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/linearLayout_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:background="@color/white"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/userMes_image" />
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/userMes_image"
+            android:layout_alignTop="@id/userMes_image"
+            android:layout_alignBottom="@id/userMes_image"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="bottom"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/userMes_image"
+                    android:textSize="17sp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/userMes_name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5sp"
+                    android:textSize="15sp"
+                    android:id="@+id/userMes_position"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/userMes_name" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userMes_hospital"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="医生数:"
+                    android:layout_below="@+id/userMes_name"
+                    android:layout_toRightOf="@id/userMes_image"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   "
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/textView7"
+                    android:layout_alignBottom="@id/userMes_hospital"
+                    android:layout_toEndOf="@+id/userMes_hospital" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/userMes_department"
+                    android:layout_alignBottom="@id/textView7"
+                    android:layout_toEndOf="@+id/textView7" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/userMes_hospital_1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+                    android:text="地址: "
+                    android:layout_below="@+id/userMes_name"
+                    android:layout_toRightOf="@id/userMes_image"
+                    />
+
+
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/userMes_department_1"
+                    android:layout_alignBottom="@id/textView7"
+                    android:layout_toEndOf="@+id/textView7" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/linear"
+            android:gravity="bottom"
+            android:layout_alignBottom="@id/linear"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_height="wrap_content"
+                android:text="|"/>
+            <ImageView
+                android:id="@+id/location_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/location_1"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btn_yiyuankeshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="医院科室"
+            />
+        <Button
+            android:id="@+id/btn_yiyuanfuwu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:layout_weight="1"
+            android:text="医院服务"
+            />
+        <Button
+            android:id="@+id/btn_yiyuanjianjie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:layout_weight="1"
+            android:text="医院简介"
+            />
+
+    </LinearLayout>
+
+ <!--   <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
+    <LinearLayout
+        android:id="@+id/ll_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    </LinearLayout>
+
+    </LinearLayout>
+
