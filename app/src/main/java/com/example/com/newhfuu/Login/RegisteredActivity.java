@@ -1,10 +1,13 @@
 package com.example.com.newhfuu.Login;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +15,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.com.newhfuu.R;
+
+import Util.TimeButton;
+import cn.smssdk.EventHandler;
+import cn.smssdk.SMSSDK;
+import daoImpl.RegisterDispose;
+import entity.PatientBaseInfo;
 
 /**
  * 注册功能：
@@ -26,6 +36,22 @@ public class RegisteredActivity extends AppCompatActivity implements View.OnClic
     private CheckBox reg_checkBox;
     String phoneEditText,codeEditText,pwdEditText;
     boolean isCheckD;
+    RegisterDispose registerDispose = new RegisterDispose(this);
+    PatientBaseInfo patientBaseInfo;
+    EventHandler eh;
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.arg1){
+                case 111:
+                    patientBaseInfo = (PatientBaseInfo) msg.obj;
+                    System.out.println(patientBaseInfo.getPatient_phone());
+                   // SMSSDK.unregisterEventHandler(eh);
+                  //  registerAction(patientBaseInfo);
+                    break;
+            }
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +62,7 @@ public class RegisteredActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void init() {
-        getCode_registered = (TextView) findViewById(R.id.getCode_registered);     /*获取验证码textview*/
+        getCode_registered = (TimeButton) findViewById(R.id.getCode_registered);     /*获取验证码textview*/
         textview_agreement = (TextView) findViewById(R.id.textview_agreement);      /*协议的链接*/
         registered_okBtn = (Button) findViewById(R.id.registered_ok);           /*完成按钮*/
         reg_phoneNum = (EditText) findViewById(R.id.reg_phoneNum);             /*手机号码输入框*/
@@ -69,15 +95,66 @@ public class RegisteredActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
+        initGetCodeAndDispose();
+        phoneEditText = reg_phoneNum.getText().toString().trim();
+        codeEditText = reg_code.getText().toString().trim();
+        String country ="86";
         switch (v.getId()){
             case R.id.getCode_registered:            /*获取验证码事件*/
+                SMSSDK.getVerificationCode(country,phoneEditText);
                 break;
             case R.id.textview_agreement:             /*协议链接事件*/
                 break;
-            case R.id.registered_ok:                    /*完成事件*/
+            case R.id.registered_ok:
+                SMSSDK.submitVerificationCode(country, phoneEditText,codeEditText);/*完成事件*/
                 break;
         }
     }
+
+    private void initGetCodeAndDispose() {
+        SMSSDK.initSDK(this,"132b58c1cad84","62203241070c26c1c316a20200e17807");
+        EventHandler eh=new EventHandler(){
+
+            @Override
+            public void afterEvent(int event, int result, Object data) {
+
+                if (result == SMSSDK.RESULT_COMPLETE) {
+                    //回调完成
+                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
+                        Log.i("提交验证码成功","提交验证码成功");
+                        // TODO: 2016/5/25 连接服务器 服务器写入数据库
+                        //提交验证码成功
+                        registerDispose.login(handler);
+
+                    }else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
+                        Log.i("获取验证码成功","获取验证码成功");
+                        //Toast toast = Toast.makeText(getApplicationContext(),"验证码已发送，请注意查收！", Toast.LENGTH_SHORT);
+                        if((boolean)data){
+                          //  reg_code.setText("已通过验证");
+                        }
+                        //获取验证码成功
+                    }else if (event ==SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES){
+                        //返回支持发送验证码的国家列表
+                        String x = String.valueOf(data);
+                        Log.e("c",x);
+                    }
+                }else{
+                    ((Throwable)data).printStackTrace();
+                }
+            }
+        };
+        SMSSDK.registerEventHandler(eh); //注册短信回调
+
+    }
+
+/*
+    private void getCodeDispose() {
+
+        //SMSSDK.initSDK(this, "132b58c1cad84", "62203241070c26c1c316a20200e17807");
+
+
+    }
+*/
 
     private class TextWatcherUser implements TextWatcher {
         @Override
